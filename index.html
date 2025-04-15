@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Pluto - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900 h-screen flex justify-center items-center">
+    <div class="bg-black bg-opacity-80 p-8 rounded-lg shadow-lg w-80 text-center">
+        <img src="pluto.png" alt="Logo Academia Pluto" class="w-20 mx-auto mb-5">
+        <h2 class="text-white text-2xl mb-4">Academia Pluto</h2>
+        <input type="text" id="cpf" class="w-full p-3 mb-4 rounded-md bg-gray-700 text-white" placeholder="CPF">
+        <div class="grid grid-cols-3 gap-2">
+            <button class="bg-gray-800 hover:bg-gray-700 text-white p-4 rounded-md" onclick="addToCpf('1')">1</button>
+            <button class="bg-gray-800 hover:bg-gray-700 text-white p-4 rounded-md" onclick="addToCpf('2')">2</button>
+            <button class="bg-gray-800 hover:bg-gray-700 text-white p-4 rounded-md" onclick="addToCpf('3')">3</button>
+            <button class="bg-gray-800 hover:bg-gray-700 text-white p-4 rounded-md" onclick="addToCpf('4')">4</button>
+            <button class="bg-gray-800 hover:bg-gray-700 text-white p-4 rounded-md" onclick="addToCpf('5')">5</button>
+            <button class="bg-gray-800 hover:bg-gray-700 text-white p-4 rounded-md" onclick="addToCpf('6')">6</button>
+            <button class="bg-gray-800 hover:bg-gray-700 text-white p-4 rounded-md" onclick="addToCpf('7')">7</button>
+            <button class="bg-gray-800 hover:bg-gray-700 text-white p-4 rounded-md" onclick="addToCpf('8')">8</button>
+            <button class="bg-gray-800 hover:bg-gray-700 text-white p-4 rounded-md" onclick="addToCpf('9')">9</button>
+            <button class="bg-red-800 hover:bg-red-700 text-white p-4 rounded-md" onclick="clearCpf()">Apagar</button>
+            <button class="bg-gray-800 hover:bg-gray-700 text-white p-4 rounded-md" onclick="addToCpf('0')">0</button>
+            <button class="bg-blue-600 hover:bg-blue-500 text-white p-4 rounded-md" onclick="verificarCPF()">Inserir</button> 
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
