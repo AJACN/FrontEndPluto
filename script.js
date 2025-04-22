@@ -1,9 +1,14 @@
 async function verificarCPF() {
-    const cpf = document.getElementById('cpf').value;
+    const cpfInput = document.getElementById('cpf');
     const mensagemElement = document.getElementById('mensagem');
+    const cpf = cpfInput.value;
 
     if (cpf.length !== 11) {
-        mensagemElement.textContent = 'CPF inválido. O CPF deve conter 11 dígitos.';
+        cpfInput.value = 'CPF inválido!';
+        setTimeout(() => {
+            cpfInput.value = '';
+            mensagemElement.textContent = '';
+        }, 3000);
         return;
     }
 
@@ -16,22 +21,42 @@ async function verificarCPF() {
 
             if (alunoEncontrado) {
                 if (alunoEncontrado.status) {
-                    mensagemElement.textContent = `Acesso liberado para ${alunoEncontrado.nome}!`;
+                    cpfInput.value = `Acesso liberado: ${alunoEncontrado.nome}!`;
+                    setTimeout(() => {
+                        cpfInput.value = '';
+                        mensagemElement.textContent = '';
+                    }, 3000);
                     // Aqui você pode adicionar a lógica para liberar a catraca
                 } else {
-                    mensagemElement.textContent = `Acesso bloqueado para ${alunoEncontrado.nome}. Status: Inativo.`;
+                    cpfInput.value = `Acesso bloqueado: ${alunoEncontrado.nome}. Inativo.`;
+                    setTimeout(() => {
+                        cpfInput.value = '';
+                        mensagemElement.textContent = '';
+                    }, 3000);
                     // Aqui você pode adicionar a lógica para bloquear a catraca
                 }
             } else {
-                mensagemElement.textContent = 'Aluno não encontrado!';
+                cpfInput.value = 'Aluno não encontrado!';
+                setTimeout(() => {
+                    cpfInput.value = '';
+                    mensagemElement.textContent = '';
+                }, 3000);
                 // Aqui você pode adicionar a lógica para bloquear a catraca
             }
         } else {
-            mensagemElement.textContent = 'Erro ao verificar o CPF.';
+            cpfInput.value = 'Erro ao verificar!';
+            setTimeout(() => {
+                cpfInput.value = '';
+                mensagemElement.textContent = '';
+            }, 3000);
         }
     } catch (error) {
         console.error('Erro:', error);
-        mensagemElement.textContent = 'Erro ao conectar com o servidor.';
+        cpfInput.value = 'Erro de conexão!';
+        setTimeout(() => {
+            cpfInput.value = '';
+            mensagemElement.textContent = '';
+        }, 3000);
     }
 }
 
